@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ShiftLogger.Models.Shift>
+
+@{
+    ViewData["Title"] = "Správa směn";
+    Layout = "_Layout";
+}
+
+<div class="m-4 w-100">
+    <h2 class="mb-4 text-center">Směny</h2>
+
+    <div class="table-responsive w-100">
+        <table class="table table-striped table-bordered table-hover w-75 mx-auto">
+            <thead>
+                <tr class="text-truncate text-center">
+                    <th class="p-1">Řidič</th>
+                    <th class="p-1">Datum</th>
+                    <th class="p-1">Auto</th>
+                    <th class="p-1">TaxiPort</th>
+                    <th class="p-1">Liftago</th>
+                    <th class="p-1">Bolt</th>
+                    <th class="p-1">Jiné</th>
+                    <th class="p-1">Vzdálenost</th>
+                    <th class="p-1">Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var shift in Model)
+                {
+                    <tr class="text-truncate text-center">
+                        <td class="p-2 p-md-3 small">@shift.Driver.UserName</td>
+                        <td class="p-2 p-md-3 small">@shift.Date.ToShortDateString()</td>
+                        <td class="p-2 p-md-3 small">(@shift.Car.Marker) @shift.Car.Name</td>
+                        <td class="p-2 p-md-3 small">@shift.TaxiPort Kč</td>
+                        <td class="p-2 p-md-3 small">@shift.Liftago Kč</td>
+                        <td class="p-2 p-md-3 small">@shift.Bolt Kč</td>
+                        <td class="p-2 p-md-3 small">@shift.Other Kč</td>
+                        <td class="p-2 p-md-3 small">@shift.Distance km</td>
+                        <td class="p-1 p-md-2 small">
+                            <a asp-action="EditShift" asp-route-id="@shift.Id" class="btn btn-primary btn-sm" style="margin-top: 3px;">Upravit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a asp-action="CreateShift" class="btn btn-success mt-2 d-block mx-auto" style="width:250px">Přidat směnu</a>
+</div>

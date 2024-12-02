@@ -1,0 +1,80 @@
+﻿@model ShiftLogger.Models.Shift
+
+@{
+    ViewData["Title"] = "Přidat novou směnu";
+    Layout = "_Layout";
+}
+
+<div class="border p-4 w-50" >
+    <h2 class="text-center">Vytvořit novou směnu</h2>
+
+    <form asp-action="CreateShift" method="post" class="d-flex flex-wrap w-100 mx-auto" id="createShiftForm">
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Driver.UserName" class="control-label">Řidič</label>
+            @if (User.IsInRole("Admin"))
+            {
+                <select asp-for="Driver.Id" class="form-control">
+                    <option value="">Vyberte řidiče</option>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <option value="@user.Value">@user.Text</option>
+                    }
+                </select>
+            }
+            else
+            {
+                <input asp-for="Driver.UserName" class="form-control" value="@User.Identity.Name" readonly />
+                <input asp-for="Driver.Id" type="hidden" value="@ViewBag.CurrentUserId" />
+            }
+            <span asp-validation-for="Driver.Id" class="text-danger"></span>
+        </div>
+
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Car.Name" class="control-label">Auto</label>
+            <select asp-for="Car.Id" class="form-control">
+                <option value="">Vyberte auto</option>
+                @foreach (var car in ViewBag.Cars)
+                {
+                    <option value="@car.Value">@car.Text</option>
+                }
+            </select>
+            <span asp-validation-for="Car.Id" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Date" class="control-label">Datum</label>
+            <input type="date" asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="TaxiPort" class="control-label">TaxiPort</label>
+            <input asp-for="TaxiPort" class="form-control" />
+            <span asp-validation-for="TaxiPort" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Liftago" class="control-label">Liftago</label>
+            <input asp-for="Liftago" class="form-control" />
+            <span asp-validation-for="Liftago" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Bolt" class="control-label">Bolt</label>
+            <input asp-for="Bolt" class="form-control" />
+            <span asp-validation-for="Bolt" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Other" class="control-label">Jiné</label>
+            <input asp-for="Other" class="form-control" />
+            <span asp-validation-for="Other" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Distance" class="control-label">Vzdálenost</label>
+            <input asp-for="Distance" class="form-control" />
+            <span asp-validation-for="Distance" class="text-danger"></span>
+        </div>
+        <div class="form-group text-center w-100">
+            <input type="submit" value="Uložit" class="btn btn-lg btn-primary w-100" />
+        </div>
+        <div class="form-group text-center w-100">
+            <a asp-action="Index" class="btn btn-secondary">Zpět</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,68 @@
+﻿@* Views/Shared/Scripts.cshtml *@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Toggle password visibility
+        const togglePassword = document.getElementById('togglePassword');
+        if (togglePassword) {
+            togglePassword.addEventListener('click', function () {
+                const passwordInput = document.getElementById('password');
+                if (passwordInput) {
+                    const isPassword = passwordInput.type === 'password';
+                    passwordInput.type = isPassword ? 'text' : 'password';
+
+                    // Toggle the icon classes
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-eye-slash', isPassword);
+                        icon.classList.toggle('fa-eye', !isPassword);
+                    }
+                }
+            });
+        }
+
+        // Remove outline and box-shadow on focus
+        ['role', 'username', 'email', 'password', 'togglePassword'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('focus', function () {
+                    element.style.outline = 'none';
+                    element.style.boxShadow = 'none';
+                });
+            }
+        });
+
+        // Handle delete and cancel buttons
+        const deleteButton = document.getElementById('deleteConfirm');
+        const cancelButton = document.getElementById('deleteButton');
+        const confirmationButtons = document.getElementById('hiddenButtons');
+
+        if (deleteButton && confirmationButtons) {
+            deleteButton.addEventListener('click', function () {
+                deleteButton.style.display = 'none';
+                confirmationButtons.style.display = 'block';
+            });
+        }
+
+        if (cancelButton && deleteButton && confirmationButtons) {
+            cancelButton.addEventListener('click', function () {
+                deleteButton.style.display = 'block';
+                confirmationButtons.style.display = 'none';
+            });
+        }
+
+        document.getElementById('deleteButton').addEventListener('click', function () {
+            document.getElementById('deleteButton').style.display = 'none';
+            document.getElementById('hiddenButtons').style.display = 'block';
+        });
+
+        document.getElementById('deleteCancel').addEventListener('click', function () {
+            document.getElementById('deleteButton').style.display = 'block';
+            document.getElementById('hiddenButtons').style.display = 'none';
+        });
+
+    });
+</script>

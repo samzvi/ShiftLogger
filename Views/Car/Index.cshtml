@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShiftLogger.Models.Car>
+
+@{
+    ViewData["Title"] = "Správa aut";
+    Layout = "_Layout";
+}
+
+<div class="m-4 w-100">
+    <h2 class="mb-4 text-center">Správa aut</h2>
+
+    <div class="table-responsive w-100">
+        <table class="table table-striped table-bordered table-hover w-50 mx-auto">
+            <thead>
+                <tr class="text-truncate text-center">
+                    <th class="p-1">Označení</th>
+                    <th class="p-1">SPZ</th>
+                    <th class="p-1">Auto</th>
+                    <th class="p-1">Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var car in Model)
+                {
+                    <tr class="text-truncate text-center">
+                        <td class="p-2 p-md-3 small">@car.Marker</td>
+                        <td class="p-2 p-lg-3 p-md-3 small">@car.SPZ</td>
+                        <td class="p-2 p-md-3 small">@car.Name</td>
+                        <td class="p-1 p-md-2 small">
+                            <a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-primary btn-sm" style="margin-top: 3px;">Upravit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a asp-action="CreateCar" class="btn btn-success mt-2 d-block mx-auto" style="width:250px">Přidat nové</a>
+</div>

@@ -1,0 +1,46 @@
+﻿@model ShiftLogger.Models.User
+
+@{
+    ViewData["Title"] = "Můj účet";
+    Layout = "_Layout";
+}
+
+<div class="container border p-4 w-100" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Můj účet</h2>
+    @{
+        if (ViewBag.changePass == true)
+        {
+            <p class="text-center text-danger">Nastav si své heslo prosím</p>
+        }
+    }
+    <form asp-action="MyAccount" method="post">
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label">Jméno</label>
+            <input asp-for="UserName" class="form-control border-secondary" id="username" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" class="form-control border-secondary" id="email" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Pass">Heslo</label>
+            <div class="input-group" id="input-group">
+                <input asp-for="Pass" class="form-control border-right-0 border-secondary" placeholder="prázdné => původní" id="password" autocomplete="off" />
+                <div class="input-group-append">
+                    <button style="width: 40px; height: 38px;" class="btn d-flex align-items-center justify-content-center border-left-0 border-secondary" type="button" id="togglePassword">
+                        <i class="fa fa-eye-slash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" asp-for="Role" />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group text-center">
+            <input type="submit" value="Uložit" class="btn btn-primary btn-lg w-100" />
+        </div>
+    </form>
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Zpět</a>
+    </div>
+</div>

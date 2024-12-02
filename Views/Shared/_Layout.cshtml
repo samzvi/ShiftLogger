@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ShiftLogger</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid align-items">
+                <a class="navbar-brand p-0" asp-controller="Home" asp-action="Index">ShiftLogger</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-grow-1">
+                        @{
+                            if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item mr-4">
+                                    <a style="margin-top: 2px;" class="nav-link text-dark p-0" asp-controller="UserManagement" asp-action="Index">Správa uživatelů</a>
+                                </li>
+                                <li class="nav-item mr-4">
+                                    <a style="margin-top: 2px;" class="nav-link text-dark p-0" asp-controller="Car" asp-action="Index">Správa aut</a>
+                                </li>
+                            }
+                        }
+                        <li class="nav-item mr-4">
+                            <a style="margin-top: 2px;" class="nav-link text-dark p-0" asp-controller="Shifts" asp-action="Index">Směny</a>
+                        </li>
+
+                        <li class="nav-item ml-auto mr-4">
+                            <form asp-controller="Home" asp-action="Logout" method="post" class="form-inline">
+                                <button type="submit" class="nav-link btn btn-link text-dark p-0" style="margin-top: 2px;">Odhlásit se</button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a style="margin-top: 2px; font-weight: bold;" class="nav-link text-dark p-0" asp-controller="UserManagement" asp-action="MyAccount">@User.Identity?.Name</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3 d-flex align-items-center justify-content-center flex-column" style="margin-top: 50px">
+            @RenderBody()
+        </main>
+    </div>
+
+    @await Html.PartialAsync("_ScriptsPartial")
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

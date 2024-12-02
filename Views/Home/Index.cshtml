@@ -1,0 +1,77 @@
+﻿@model ShiftLogger.Models.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Login - ShiftLogger</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand p-0" asp-area="" asp-controller="Home" asp-action="Index">ShiftLogger</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+            <div class="card p-4 w-100" style="max-width: 400px;">
+                <h2 class="text-center mb-4">Přihlášení</h2>
+                <form asp-action="Login" method="post">
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control border-secondary" placeholder="prijmeni.galmonez@seznam.cz" id="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Heslo</label>
+                        <div class="input-group" id="input-group">
+                            <input asp-for="Password" value="S@muel123" class="form-control border-right-0 border-secondary" placeholder="********" id="password" autocomplete="off" />
+                            <div class="input-group-append">
+                                <button style="width: 40px; height: 38px;" class="btn d-flex align-items-center justify-content-center border-left-0 border-secondary" type="button" id="togglePassword">
+                                    <i class="fa fa-eye-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="text-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Přihlásit</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#togglePassword').on('click', function () {
+                const passwordInput = $('#password');
+                const type = passwordInput.attr('type') === 'password' ? 'text' : 'password';
+                passwordInput.attr('type', type);
+                $(this).find('i').toggleClass('fa-eye-slash fa-eye');
+            });
+
+            $('#email, #password, #togglePassword').on('focus', function () {
+                $(this).css('outline', 'none');
+                $(this).css('box-shadow', 'none');
+            });
+        });
+    </script>
+</body>
+</html>

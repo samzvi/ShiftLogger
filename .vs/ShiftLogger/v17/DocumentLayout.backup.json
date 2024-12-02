@@ -1,0 +1,459 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\OneDrive\\Projects\\ShiftLogger\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\controllers\\shiftscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:controllers\\shiftscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\shifts\\editshift.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\shifts\\editshift.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\shifts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\shifts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\shifts\\createshift.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\shifts\\createshift.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\usermanagement\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\usermanagement\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\usermanagement\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\usermanagement\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ShiftLogger/True/SqlTable/dbo.Shifts.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\shared\\scripts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\shared\\scripts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\usermanagement\\myaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\usermanagement\\myaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\usermanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\usermanagement\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\models\\shift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:models\\shift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\migrations\\20241202032222_paperlessremoval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:migrations\\20241202032222_paperlessremoval.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ShiftLogger/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\car\\editcar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\car\\editcar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\car\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\car\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\data\\shiftloggercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:data\\shiftloggercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|d:\\onedrive\\projects\\shiftlogger\\todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{92CD0FAB-45D5-4243-A975-E2FB62A50757}|ShiftLogger.csproj|solutionrelative:todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 145,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditShift.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\EditShift.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shifts\\EditShift.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\EditShift.cshtml",
+              "RelativeToolTip": "Views\\Shifts\\EditShift.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T04:30:56.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dbo.Shifts [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ShiftLogger/True/SqlTable/dbo.Shifts.sql",
+              "ToolTip": "dbo.Shifts [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-02T03:54:06.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20241202032222_PaperlessRemoval.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Migrations\\20241202032222_PaperlessRemoval.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241202032222_PaperlessRemoval.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Migrations\\20241202032222_PaperlessRemoval.cs",
+              "RelativeToolTip": "Migrations\\20241202032222_PaperlessRemoval.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T03:22:23.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "dbo.AspNetUsers.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ShiftLogger/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ShiftLogger/True/SqlTable/dbo.AspNetUsers.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-02T01:25:24.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserManagement\\EditUser.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\EditUser.cshtml",
+              "RelativeToolTip": "Views\\UserManagement\\EditUser.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwCAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T01:17:51.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MyAccount.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\MyAccount.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserManagement\\MyAccount.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\MyAccount.cshtml",
+              "RelativeToolTip": "Views\\UserManagement\\MyAccount.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T18:42:23.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreateUser.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\CreateUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserManagement\\CreateUser.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\CreateUser.cshtml",
+              "RelativeToolTip": "Views\\UserManagement\\CreateUser.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-07T21:16:03.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManagementController.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\UserManagementController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserManagementController.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\UserManagementController.cs",
+              "RelativeToolTip": "Controllers\\UserManagementController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwBUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T21:45:28.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShiftsController.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\ShiftsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ShiftsController.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\ShiftsController.cs*",
+              "RelativeToolTip": "Controllers\\ShiftsController.cs*",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAuwGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T21:09:50.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "Models\\Car.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Car.cs",
+              "RelativeToolTip": "Models\\Car.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:09:55.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAQwC0AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T20:33:53.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Shift.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Shift.cs",
+              "RelativeDocumentMoniker": "Models\\Shift.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Shift.cs",
+              "RelativeToolTip": "Models\\Shift.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T17:22:58.81Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T20:20:12.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateShift.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\CreateShift.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shifts\\CreateShift.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\CreateShift.cshtml",
+              "RelativeToolTip": "Views\\Shifts\\CreateShift.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T21:29:34.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-04T21:04:07.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shifts\\Index.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shifts\\Index.cshtml",
+              "RelativeToolTip": "Views\\Shifts\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T21:09:23.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EditCar.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Car\\EditCar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Car\\EditCar.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Car\\EditCar.cshtml",
+              "RelativeToolTip": "Views\\Car\\EditCar.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwBwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-21T18:04:28.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Driver.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Driver.cs",
+              "RelativeDocumentMoniker": "Models\\Driver.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\Driver.cs",
+              "RelativeToolTip": "Models\\Driver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T20:19:42.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserManagement\\Index.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\UserManagement\\Index.cshtml",
+              "RelativeToolTip": "Views\\UserManagement\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-01T20:56:41.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Car\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Car\\Index.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Car\\Index.cshtml",
+              "RelativeToolTip": "Views\\Car\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T02:41:17.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T20:04:16.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Scripts.cshtml",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shared\\Scripts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Scripts.cshtml",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Views\\Shared\\Scripts.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Scripts.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-29T18:04:57.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\CarController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CarController.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\CarController.cs",
+              "RelativeToolTip": "Controllers\\CarController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAqwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T18:13:57.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwC4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T20:45:27.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ShiftLoggerContext.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Data\\ShiftLoggerContext.cs",
+              "RelativeDocumentMoniker": "Data\\ShiftLoggerContext.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Data\\ShiftLoggerContext.cs",
+              "RelativeToolTip": "Data\\ShiftLoggerContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T20:47:21.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T04:23:25.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TODO.txt",
+              "DocumentMoniker": "D:\\OneDrive\\Projects\\ShiftLogger\\TODO.txt",
+              "RelativeDocumentMoniker": "TODO.txt",
+              "ToolTip": "D:\\OneDrive\\Projects\\ShiftLogger\\TODO.txt",
+              "RelativeToolTip": "TODO.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-07T20:44:06.641Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

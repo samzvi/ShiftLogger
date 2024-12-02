@@ -1,0 +1,3 @@
+1. add RememberMe
+
+!!!! FIX MY ACCOUNT MODEL PROPERTY PASS 
