@@ -9,12 +9,19 @@ namespace ShiftLogger.Controllers
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         public HomeController(SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
         }
 
+
+        [HttpGet]
         public IActionResult Index()
         {
             if (User.Identity.IsAuthenticated)

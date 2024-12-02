@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
@@ -18,6 +19,8 @@ namespace ShiftLogger.Controllers
             _userManager = userManager;
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             var users = _userManager.Users.ToList();
@@ -75,6 +78,7 @@ namespace ShiftLogger.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EditUser(string id)
         { 
             var user = await _userManager.FindByIdAsync(id);
@@ -148,6 +152,7 @@ namespace ShiftLogger.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateUser()
         {
             return View();
@@ -194,8 +199,6 @@ namespace ShiftLogger.Controllers
         }
 
 
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(string id)
@@ -232,8 +235,6 @@ namespace ShiftLogger.Controllers
                 return new string("Heslo musí mít alespoň jedno malé písmeno ('A' - 'Z')");
             else if (erCode == "DuplicateUserName")
                 return new string("Jméno již existuje");
-
-
             else
                 return new string("Neznámá chyba");
         }

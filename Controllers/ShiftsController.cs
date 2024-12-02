@@ -22,11 +22,20 @@ namespace ShiftLogger.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            Console.WriteLine("Is user Admin?: " + User.IsInRole("Admin"));
-            var shifts = await _context.Shifts
+            var userId = _userManager.GetUserId(User);
+            var isAdmin = User.IsInRole("Admin");
+
+            IQueryable<Shift> shiftsQuery = _context.Shifts
                 .Include(c => c.Car)
-                .Include(d => d.Driver)
-                .ToListAsync();
+                .Include(d => d.Driver);
+
+            if (!isAdmin)
+            {
+                shiftsQuery = shiftsQuery.Where(s => s.Driver.Id == userId);
+            }
+
+            var shifts = await shiftsQuery.ToListAsync();
+
             return View(shifts);
         }
 

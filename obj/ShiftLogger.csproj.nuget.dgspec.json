@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger.csproj": {}
+    "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger\\ShiftLogger.csproj": {}
   },
   "projects": {
-    "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger.csproj": {
+    "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger\\ShiftLogger.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger.csproj",
+        "projectUniqueName": "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger\\ShiftLogger.csproj",
         "projectName": "ShiftLogger",
-        "projectPath": "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger.csproj",
+        "projectPath": "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger\\ShiftLogger.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\OneDrive\\Projects\\ShiftLogger\\obj\\",
+        "outputPath": "D:\\OneDrive\\Projects\\ShiftLogger\\ShiftLogger\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

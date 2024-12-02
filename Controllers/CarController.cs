@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShiftLogger.Data;
 using ShiftLogger.Models;
@@ -16,7 +17,8 @@ namespace ShiftLogger.Controllers
             _context = context;
         }
 
-
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Cars.ToListAsync());
@@ -40,7 +42,8 @@ namespace ShiftLogger.Controllers
             return View(car);
         }
 
-
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult CreateCar()
         {
             return View();
@@ -62,6 +65,7 @@ namespace ShiftLogger.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)

@@ -26,11 +26,36 @@ builder.Services.AddDefaultIdentity<User>(options =>
     options.User.RequireUniqueEmail = true;
 
     options.User.AllowedUserNameCharacters += " áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ";
-
 })
 .AddRoles<IdentityRole>()
-.AddEntityFrameworkStores<ShiftLoggerContext>();
+.AddEntityFrameworkStores<ShiftLoggerContext>()
+.AddDefaultTokenProviders()
+.AddSignInManager()
+.AddDefaultUI()
+.AddDefaultTokenProviders();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Home/AccessDenied";
+});
+
+// Configure authentication and authorization
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+})
+.AddCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Home/AccessDenied";
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
 
 var app = builder.Build();
 
@@ -39,7 +64,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    // Create the roles based on User model if it doesn't exist
+    // Create the roles based on User model if they don't exist
     foreach (var role in Enum.GetValues(typeof(User.UserRole)))
     {
         string roleName = role.ToString();
