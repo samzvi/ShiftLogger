@@ -4,77 +4,86 @@
     ViewData["Title"] = "Upravit směnu";
     Layout = "_Layout";
 }
+<div class="container border p-4 w-100" style="max-width: 750px;">
+    <h2 class="text-center">Upravit směnu</h2>
 
-<h2 class="text-center">Upravit směnu</h2>
+    <form asp-action="EditShift" method="post" class="d-flex flex-wrap w-100 mx-auto" id="editShiftForm">
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Driver.UserName" class="control-label">Řidič</label>
+            @if (User.IsInRole("Admin"))
+            {
+                <select asp-for="Driver.Id" class="form-control">
+                    <option value="">Vyberte řidiče</option>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <option value="@user.Value">@user.Text</option>
+                    }
+                </select>
+            }
+            else
+            {
+                <input asp-for="Driver.UserName" class="form-control" value="@Model.Driver.UserName" readonly />
+                <input type="hidden" asp-for="Driver.Id" value="@Model.Driver?.Id" />
+            }
+            <span asp-validation-for="Driver.Id" class="text-danger"></span>
+        </div>
 
-<form asp-action="EditShift" method="post" class="d-flex flex-wrap w-50 mx-auto" id="editShiftForm">
-    <div class="form-group w-50 pr-2">
-        <label asp-for="Driver.UserName" class="control-label">Řidič</label>
-        @if (User.IsInRole("Admin"))
-        {
-            <select asp-for="Driver.Id" class="form-control">
-                <option value="">Vyberte řidiče</option>
-                @foreach (var user in ViewBag.Users)
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Car.Name" class="control-label">Auto</label>
+            <select asp-for="Car.Id" class="form-control">
+                <option value="">Vyberte auto</option>
+                @foreach (var car in ViewBag.Cars)
                 {
-                    <option value="@user.Value">@user.Text</option>
+                    <option value="@car.Value">@car.Text</option>
                 }
             </select>
-        }
-        else
-        {
-            <input asp-for="Driver.UserName" class="form-control" value="@Model.Driver.UserName" readonly />
-            <input type="hidden" asp-for="Driver.Id" value="@Model.Driver?.Id" />
-        }
-        <span asp-validation-for="Driver.Id" class="text-danger"></span>
-    </div>
+            <span asp-validation-for="Car.Id" class="text-danger"></span>
+        </div>
 
-    <div class="form-group w-50 pl-2">
-        <label asp-for="Car.Name" class="control-label">Auto</label>
-        <select asp-for="Car.Id" class="form-control">
-            <option value="">Vyberte auto</option>
-            @foreach (var car in ViewBag.Cars)
-            {
-                <option value="@car.Value">@car.Text</option>
-            }
-        </select>
-        <span asp-validation-for="Car.Id" class="text-danger"></span>
-    </div>
-    
-    <div class="form-group w-50 pr-2">
-        <label asp-for="Date" class="control-label">Datum</label>
-        <input type="date" asp-for="Date" class="form-control" />
-        <span asp-validation-for="Date" class="text-danger"></span>
-    </div>
-    <div class="form-group w-50 pl-2">
-        <label asp-for="TaxiPort" class="control-label">TaxiPort</label>
-        <input asp-for="TaxiPort" class="form-control" />
-        <span asp-validation-for="TaxiPort" class="text-danger"></span>
-    </div>
-    <div class="form-group w-50 pr-2">
-        <label asp-for="Liftago" class="control-label">Liftago</label>
-        <input asp-for="Liftago" class="form-control" />
-        <span asp-validation-for="Liftago" class="text-danger"></span>
-    </div>
-    <div class="form-group w-50 pl-2">
-        <label asp-for="Bolt" class="control-label">Bolt</label>
-        <input asp-for="Bolt" class="form-control" />
-        <span asp-validation-for="Bolt" class="text-danger"></span>
-    </div>
-    <div class="form-group w-50 pr-2">
-        <label asp-for="Other" class="control-label">Jiné</label>
-        <input asp-for="Other" class="form-control" />
-        <span asp-validation-for="Other" class="text-danger"></span>
-    </div>
-    <div class="form-group w-50 pl-2">
-        <label asp-for="Distance" class="control-label">Vzdálenost</label>
-        <input asp-for="Distance" class="form-control" />
-        <span asp-validation-for="Distance" class="text-danger"></span>
-    </div>
-    
-    <div class="form-group text-center w-100">
-        <input type="submit" value="Upravit" class="btn btn-success" />
-    </div>
-    <div class="form-group text-center w-100">
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Date" class="control-label">Datum</label>
+            <input type="date" asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="TaxiPort" class="control-label">TaxiPort</label>
+            <input asp-for="TaxiPort" class="form-control" />
+            <span asp-validation-for="TaxiPort" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Liftago" class="control-label">Liftago</label>
+            <input asp-for="Liftago" class="form-control" />
+            <span asp-validation-for="Liftago" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Bolt" class="control-label">Bolt</label>
+            <input asp-for="Bolt" class="form-control" />
+            <span asp-validation-for="Bolt" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pr-2">
+            <label asp-for="Other" class="control-label">Jiné</label>
+            <input asp-for="Other" class="form-control" />
+            <span asp-validation-for="Other" class="text-danger"></span>
+        </div>
+        <div class="form-group w-50 pl-2">
+            <label asp-for="Distance" class="control-label">Vzdálenost</label>
+            <input asp-for="Distance" class="form-control" />
+            <span asp-validation-for="Distance" class="text-danger"></span>
+        </div>
+
+        <div class="text-center w-100">
+            <button type="submit" class="btn btn-primary btn-lg w-100">Uložit</button>
+        </div>
+    </form>
+    <div class="text-center mt-4 w-100 d-flex justify-content-between align-items-end">
+        <button type="button" class="btn btn-danger" id="deleteButton">Smazat</button>
+        <div id="hiddenButtons" style="display: none">
+            <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                <label class="text-danger">Nenávratně smazat?</label><br />
+                <button type="button" class="btn btn-secondary" id="deleteCancel">Zrušit</button>
+                <button type="submit" class="btn btn-danger" id="deleteConfirm">Potvrdit</button>
+            </form>
+        </div>
         <a asp-action="Index" class="btn btn-secondary">Zpět</a>
     </div>
-</form>
+</div>

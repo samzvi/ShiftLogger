@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure Entity Framework Core
+// Configure Entity Framework Core with SQL Server
 builder.Services.AddDbContext<ShiftLoggerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure Identity
+// Configure Identity with custom settings
 builder.Services.AddDefaultIdentity<User>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
@@ -23,17 +23,17 @@ builder.Services.AddDefaultIdentity<User>(options =>
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = true;
 
+    // User settings
     options.User.RequireUniqueEmail = true;
-
     options.User.AllowedUserNameCharacters += " áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ";
 })
-.AddRoles<IdentityRole>()
-.AddEntityFrameworkStores<ShiftLoggerContext>()
-.AddDefaultTokenProviders()
-.AddSignInManager()
-.AddDefaultUI()
-.AddDefaultTokenProviders();
+.AddRoles<IdentityRole>() // Add role support
+.AddEntityFrameworkStores<ShiftLoggerContext>() // Use EF Core for Identity
+.AddDefaultTokenProviders() // Add default token providers
+.AddSignInManager() // Add sign-in manager
+.AddDefaultUI(); // Add default UI
 
+// Configure application cookies
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
@@ -52,10 +52,8 @@ builder.Services.AddAuthentication(options =>
     options.AccessDeniedPath = "/Home/AccessDenied";
 });
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-});
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
 
 var app = builder.Build();
 
@@ -64,7 +62,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    // Create the roles based on User model if they don't exist
+    // Create roles if they don't exist
     foreach (var role in Enum.GetValues(typeof(User.UserRole)))
     {
         string roleName = role.ToString();

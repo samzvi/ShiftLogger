@@ -19,110 +19,117 @@ namespace ShiftLogger.Controllers
             _userManager = userManager;
         }
 
+        // Displays shifts based on user role
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             var userId = _userManager.GetUserId(User);
             var isAdmin = User.IsInRole("Admin");
 
+            // Build the query for fetching shifts
             IQueryable<Shift> shiftsQuery = _context.Shifts
                 .Include(c => c.Car)
                 .Include(d => d.Driver);
 
+            // Filter shifts based on user role: admins can see all shifts, others only their own
             if (!isAdmin)
             {
                 shiftsQuery = shiftsQuery.Where(s => s.Driver.Id == userId);
             }
 
+            // Fetch the shifts and return to the view
             var shifts = await shiftsQuery.ToListAsync();
-
             return View(shifts);
         }
 
+        // Displays the form for creating a new shift
         [HttpGet]
         public async Task<IActionResult> CreateShift()
         {
+            // Populate dropdowns with users and cars for shift creation
             ViewBag.Users = new SelectList(await _context.Users.ToListAsync(), "Id", "UserName");
             ViewBag.Cars = new SelectList(await _context.Cars.ToListAsync(), "Id", "Marker");
             ViewBag.CurrentUserId = _userManager.GetUserId(User);
 
-            Shift shift = new Shift();
-            shift.Date = DateTime.Now;
-
+            // Initialize the shift with the current date
+            Shift shift = new Shift { Date = DateTime.Now };
             return View(shift);
         }
 
-
+        // Handles the form submission to create a new shift
         [HttpPost]
         public async Task<IActionResult> CreateShift(Shift shift)
         {
+            // Ensure that the selected car and driver exist in the database
             shift.Car = await _context.Cars.FirstOrDefaultAsync(c => c.Id == shift.Car.Id);
             shift.Driver = await _context.Users.FirstOrDefaultAsync(u => u.Id == shift.Driver.Id);
 
+            // Remove any validation errors related to the Car and Driver properties
             ModelState.RemoveAll<Shift>(x => x.Driver != null || x.Car != null);
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Shifts.Add(shift);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                Console.WriteLine("Model is not valid. Errors:");
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+
+                // Repopulate the dropdowns and return the form with the current shift data
+                ViewBag.Users = new SelectList(await _context.Users.ToListAsync(), "Id", "UserName", shift.Driver?.Id);
+                ViewBag.Cars = new SelectList(await _context.Cars.ToListAsync(), "Id", "Name", shift.Car?.Id);
+                return View(shift); 
             }
 
-            Console.WriteLine("Model is not valid. Errors:");
-            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-            {
-                Console.WriteLine(error.ErrorMessage); // Or log it somewhere else
-            }
-
-            ViewBag.Users = new SelectList(_context.Users, "Id", "UserName", shift.Driver?.Id);
-            ViewBag.Cars = new SelectList(_context.Cars, "Id", "Name", shift.Car?.Id);
-            return View(shift);
+            // If validation passes, add the new shift and redirect
+            _context.Shifts.Add(shift);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
-
+        // Displays the form for editing an existing shift
         [HttpGet]
         public async Task<IActionResult> EditShift(int id)
         {
-            // Fetch the shift to be edited
+            // Fetch the shift to be edited along with related entities
             var shift = await _context.Shifts
                 .Include(s => s.Driver)
                 .Include(s => s.Car)
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             if (shift == null)
-            {
-                return NotFound();  // If the shift doesn't exist
-            }
+                return NotFound();
 
-            // Populate ViewBag for users and cars
+            // Populate dropdowns for users and cars
             ViewBag.Users = new SelectList(await _context.Users.ToListAsync(), "Id", "UserName");
             ViewBag.Cars = new SelectList(await _context.Cars.ToListAsync(), "Id", "Marker");
 
             return View(shift);
         }
 
+        // Handles the form submission for editing an existing shift
         [HttpPost]
         public async Task<IActionResult> EditShift(Shift shift)
         {
+            // Ensure that the selected car and driver exist in the database
             shift.Car = await _context.Cars.FirstOrDefaultAsync(c => c.Id == shift.Car.Id);
             shift.Driver = await _context.Users.FirstOrDefaultAsync(u => u.Id == shift.Driver.Id);
 
+            // Remove any validation errors related to the Car and Driver properties
             ModelState.RemoveAll<Shift>(x => x.Driver != null || x.Car != null);
 
             if (ModelState.IsValid)
             {
-                // Update the Shift details
+                // Fetch the existing shift from the database for updating
                 var existingShift = await _context.Shifts
                     .Include(s => s.Driver)
                     .Include(s => s.Car)
                     .FirstOrDefaultAsync(s => s.Id == shift.Id);
 
                 if (existingShift == null)
-                {
-                    return NotFound();  // If the shift doesn't exist anymore
-                }
+                    return NotFound();
 
-                // Update the properties
+                // Update the properties of the existing shift
                 existingShift.Driver = shift.Driver;
                 existingShift.Car = shift.Car;
                 existingShift.Date = shift.Date;
@@ -132,33 +139,46 @@ namespace ShiftLogger.Controllers
                 existingShift.Other = shift.Other;
                 existingShift.Distance = shift.Distance;
 
-                // Save the changes
-                _context.Update(existingShift);
-                await _context.SaveChangesAsync();
-
-                // Redirect to the list or detail page
-                return RedirectToAction(nameof(Index));
-            }
-
-            ////////////////////
-            Console.WriteLine("Model is not valid. Errors:");
-            foreach (var modelState in ModelState.Values)
-            {
-                foreach (var error in modelState.Errors)
+                try
                 {
-                    Console.WriteLine(error.ErrorMessage); // Log the error message
+                    // Save the updated shift data
+                    _context.Update(existingShift);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (DbUpdateException)
+                {
+                    AddErrorsToModelState("Nastala chyba při ukládání směny. Zkuste znovu");
                 }
             }
 
-            // If ModelState is invalid, re-populate ViewBag and return the view
+            // Repopulate the dropdowns and return the form with errors
             ViewBag.Users = new SelectList(await _context.Users.ToListAsync(), "Id", "UserName", shift.Driver?.Id);
             ViewBag.Cars = new SelectList(await _context.Cars.ToListAsync(), "Id", "Marker", shift.Car?.Id);
-
             return View(shift);
         }
 
+        // Handle shift deletion
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var shift = await _context.Shifts.FindAsync(id);
+            if (shift == null)
+            {
+                return NotFound();
+            }
+
+            _context.Shifts.Remove(shift);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
 
 
-
+        // Centralized error handling method for adding errors to ModelState
+        private void AddErrorsToModelState(string errorMessage)
+        {
+            ModelState.AddModelError(string.Empty, errorMessage);
+        }
     }
 }

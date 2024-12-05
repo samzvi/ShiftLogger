@@ -1,3 +1,9 @@
 1. add RememberMe
 
-!!!! FIX MY ACCOUNT MODEL PROPERTY PASS 
+2. vytvoreni smeny->oddelat inkrementy z ipt
+3. Duplicitni email háže neznamou chybu
+4. Součet trzžby pro každou smenu 
+5. negativni hodnoty smeny trzby
+
+
++- duplicita SPZ

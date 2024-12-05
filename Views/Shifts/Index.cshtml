@@ -27,7 +27,16 @@
                 @foreach (var shift in Model)
                 {
                     <tr class="text-truncate text-center">
-                        <td class="p-2 p-md-3 small">@shift.Driver.UserName</td>
+                        <td>
+                            @if (shift.Driver == null)
+                            {
+                                <i class="text-muted">*neznámý*</i>
+                            }
+                            else
+                            {
+                                <span>@shift.Driver.UserName</span>
+                            }
+                        </td>
                         <td class="p-2 p-md-3 small">@shift.Date.ToShortDateString()</td>
                         <td class="p-2 p-md-3 small">(@shift.Car.Marker) @shift.Car.Name</td>
                         <td class="p-2 p-md-3 small">@shift.TaxiPort Kč</td>

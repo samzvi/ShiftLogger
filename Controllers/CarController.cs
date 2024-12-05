@@ -17,6 +17,7 @@ namespace ShiftLogger.Controllers
             _context = context;
         }
 
+        // Displays all cars (admin only)
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
@@ -25,23 +26,7 @@ namespace ShiftLogger.Controllers
         }
 
 
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var car = await _context.Cars
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (car == null)
-            {
-                return NotFound();
-            }
-
-            return View(car);
-        }
-
+        // Displays the form to create a new car
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult CreateCar()
@@ -49,40 +34,42 @@ namespace ShiftLogger.Controllers
             return View();
         }
 
-
+        // Handles the form submission to create a new car
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateCar([Bind("Id,SPZ,Name,Marker")] Car car)
+        public async Task<IActionResult> CreateCar(Car car)
         {
             if (ModelState.IsValid)
             {
+                // Add the new car to the context and save the changes
                 _context.Add(car);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(car);
         }
 
-
+        // Displays the form to edit an existing car
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            if (!id.HasValue)
                 return NotFound();
 
             var car = await _context.Cars.FindAsync(id);
-
             if (car == null)
                 return NotFound();
 
+            // Return the edit view with the car's data
             return View("EditCar", car);
         }
 
-
+        // Handles the form submission to update an existing car
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SPZ,Name,Marker")] Car car)
+        public async Task<IActionResult> Edit(int id, Car car)
         {
             if (id != car.Id)
                 return NotFound();
@@ -91,50 +78,48 @@ namespace ShiftLogger.Controllers
             {
                 var existingCar = await _context.Cars.FindAsync(id);
                 if (existingCar == null)
-                {
                     return NotFound();
-                }
 
+                // Update the car's properties with the submitted data
                 existingCar.SPZ = car.SPZ;
                 existingCar.Name = car.Name;
                 existingCar.Marker = car.Marker;
 
                 try
                 {
+                    // Save the changes to the database
                     _context.Update(existingCar);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateException ex)
+                catch (DbUpdateException)
                 {
-                    ModelState.AddModelError(string.Empty, "Nastala chyba při ukládání auta. Zkuste znovu");
+                    AddErrorsToModelState("Nastala chyba při ukládání auta. Zkuste znovu");
                 }
             }
 
             return View("EditCar", car);
         }
 
-
-
-        private bool CarExists(int id)
-        {
-            return _context.Cars.Any(e => e.Id == id);
-        }
-
-
+        // Handles the car deletion process
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var car = await _context.Cars.FindAsync(id);
             if (car == null)
-            {
                 return NotFound();
-            }
 
+            // Remove the car from the context and save changes
             _context.Cars.Remove(car);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        // Centralized error handling method to add errors to ModelState
+        private void AddErrorsToModelState(string errorMessage)
+        {
+            ModelState.AddModelError(string.Empty, errorMessage);
         }
     }
 }

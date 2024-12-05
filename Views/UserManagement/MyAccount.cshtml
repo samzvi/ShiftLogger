@@ -41,6 +41,16 @@
     </form>
 
     <div class="text-center mt-4">
-        <a asp-action="Index" class="btn btn-secondary">Zpět</a>
+        @{
+            if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Index" asp-controller="UserManagement" class="btn btn-secondary">Zpět</a>
+            }
+            else
+            {
+                <a asp-action="Index" asp-controller="Shifts" class="btn btn-secondary">Zpět</a>
+            }
+        }
+        
     </div>
 </div>
